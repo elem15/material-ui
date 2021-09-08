@@ -8,10 +8,10 @@ import App from './components/App';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#61dafb'
+            main: '#628272'
         },
         secondary: {
-            main: 'rgb(121, 182, 242)'
+            main: '#a4bfd1'
         }
     }
 })

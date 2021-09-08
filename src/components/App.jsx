@@ -74,7 +74,9 @@ const App = () => {
         <>
         <Header 
             handleCart = {() => setCartOpen(true)}
-            orderLen={order.length}
+            orderLen={order.reduce((acc, item) => {
+                return acc + item.quantity;
+            }, 0)}
         />
         <Container
             sx={{mt: '1rem'}}

@@ -7,7 +7,7 @@ const Basket = (props) => {
 
     return (
         <Drawer
-            anchor='right'
+            anchor='top'
             open={cartOpen}
             onClose={closeCart}
         >
