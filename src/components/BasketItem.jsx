@@ -1,14 +1,21 @@
-const BasketItem = (props) => {
+import { IconButton, ListItem, Typography } from "@material-ui/core";
+import { Close } from "@material-ui/icons";
+
+const BasketItem = ({removeFromOrder, name, price, id, quantity}) => {
     return (
-        <li className='list-group-item'>
-            {props.name} {props.price}руб x{props.quantity}
-            <button
-                className='btn btn-primary'
-                onClick={() => props.setOrder(props.id)}
+        <ListItem>
+            <Typography
+                variant="body1"
             >
-                Удалить из корзины
-            </button>
-        </li>
+            {name} {price}руб x{quantity}
+            </Typography>
+            <IconButton
+                className='btn btn-primary'
+                onClick={() => removeFromOrder(id)}
+            >
+                <Close />
+            </IconButton>       
+        </ListItem>
     );
 };
 

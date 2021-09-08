@@ -1,7 +1,8 @@
 import { AppBar, IconButton, Toolbar, Typography } from "@material-ui/core";
 import { ShoppingBasket } from "@material-ui/icons";
 
-export default function Header() {
+export default function Header({handleCart}) {
+   
     return (
         <AppBar position="static">
             <Toolbar>
@@ -14,6 +15,7 @@ export default function Header() {
                 </Typography>
                 <IconButton
                     color="inherit"
+                    onClick={handleCart}
                 >
                     <ShoppingBasket/>
                 </IconButton>

@@ -6,11 +6,14 @@ import Search from './Search';
 
 import { goods } from '../data/goods';
 import Header from './Header';
+import { Container } from '@material-ui/core';
+import Basket from './Basket';
 
 const App = () => {
     const [order, setOrder] = useState([]);
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState(goods);
+    const [isCartOpen, setCartOpen] = useState(false)
 
     const handleChange = (e) => {
         if (!e.target.value) {
@@ -67,7 +70,12 @@ const App = () => {
 
     return (
         <>
-        <Header />
+        <Header 
+            handleCart = {() => setCartOpen(true)}
+        />
+        <Container
+            sx={{mt: '1rem'}}
+        >
         <div className='App'>
             <div className='container'>
                 <Search
@@ -77,13 +85,16 @@ const App = () => {
                 <GoodsList
                     goods={products}
                     setOrder={addToOrder}
-                />
-                <BasketList
-                    order={order}
-                    setOrder={removeFromOrder}
-                />
+                />              
             </div>
-        </div>
+        </div> 
+        </Container>
+       <Basket
+            order={order}
+            removeFromOrder={removeFromOrder}
+            cartOpen = {isCartOpen}
+            closeCart = {() => setCartOpen(false)}
+        />
         </>
     );
 }
