@@ -6,7 +6,7 @@ const GoodsItem = (props) => {
     const { name, price, setOrder, poster } = props;
 
     return (
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} xxl={1}>
             <Card sx={{height: '100%'}}>
                 <CardMedia
                         image={poster}
@@ -16,7 +16,7 @@ const GoodsItem = (props) => {
                         sx={{height: 140}} 
                        
                     />                
-                <CardContent sx={{height: 80}} >
+                <CardContent sx={{flex: 1}} >
                     <Typography
                         component='h5'
                         variant='h6'

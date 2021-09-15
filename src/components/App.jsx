@@ -79,7 +79,8 @@ const App = () => {
             }, 0)}
         />
         <Container
-            sx={{mt: '1rem'}}
+            sx={{mt: '1rem' }}
+            maxWidth='xxl'
         >
         <div className='App'>
             <div className='container'>
